@@ -1,10 +1,12 @@
 steps:
 # This step runs the unit tests on the app
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['npm install express']
+- name: 'node'
+  entrypoint: npm
+  args: ['install']
 
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['npm start']
+- name: 'node'
+  entrypopint: npm
+  args: ['start']
 
 # This step builds the container image.
 - name: 'gcr.io/cloud-builders/docker'
