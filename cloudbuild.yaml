@@ -5,7 +5,7 @@ steps:
   args: ['install']
 
 - name: 'node'
-  entrypopint: npm
+  entrypoint: npm
   args: ['start']
 
 # This step builds the container image.
