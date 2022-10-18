@@ -19,6 +19,7 @@ steps:
 # [END cloudbuild]
 
 # This step clones the hello-cloudbuild-env repository
+# change the name of clone repo
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Clone env repository
   entrypoint: /bin/sh
@@ -51,6 +52,6 @@ steps:
     cd hello-cloudbuild-env && \
     git add kubernetes.yaml && \
     git commit -m "Deploying image us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild:${SHORT_SHA}
-    Built from commit ${COMMIT_SHA} of repository helloaa
+    Built from commit ${COMMIT_SHA} of repository testabc
     Author: $(git log --format='%an <%ae>' -n 1 HEAD)" && \
     git push origin candidate
