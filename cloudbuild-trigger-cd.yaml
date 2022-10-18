@@ -5,7 +5,7 @@
   args:
   - '-c'
   - |
-    gcloud source repos clone hello-cloudbuild-env && \
+    gcloud source repos clone hellobb hello-cloudbuild-env && \
     cd hello-cloudbuild-env && \
     git checkout candidate && \
     git config user.email $(gcloud auth list --filter=status:ACTIVE --format='value(account)')
@@ -31,6 +31,6 @@
     cd hello-cloudbuild-env && \
     git add kubernetes.yaml && \
     git commit -m "Deploying image us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild:${SHORT_SHA}
-    Built from commit ${COMMIT_SHA} of repository hello-cloudbuild-app
+    Built from commit ${COMMIT_SHA} of repository helloaa
     Author: $(git log --format='%an <%ae>' -n 1 HEAD)" && \
     git push origin candidate
