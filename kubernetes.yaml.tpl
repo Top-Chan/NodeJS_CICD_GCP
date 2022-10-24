@@ -15,32 +15,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-cloudbuild
+  name: nodejs-test
   labels:
-    app: hello-cloudbuild
+    app: nodejs-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-cloudbuild
+      app: nodejs-test
   template:
     metadata:
       labels:
-        app: hello-cloudbuild
+        app: nodejs-test
     spec:
       containers:
       - name: hello-cloudbuild
-        image: us-central1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/my-repository/hello-cloudbuild:COMMIT_SHA
+        image: us-central1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/my-repository/nodejs-test:COMMIT_SHA
         ports:
         - containerPort: 8080
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: hello-cloudbuild
+  name: nodejs-test
 spec:
   selector:
-    app: hello-cloudbuild
+    app: nodejs-test
   ports:
   - protocol: TCP
     port: 80
