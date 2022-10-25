@@ -4,7 +4,7 @@ FROM node:16-slim
 # 创建一个文件夹存放应用程序代码
 WORKDIR /usr/src/app
 
-# Install app dependencies
+# 安装你的应用程序的所有依赖
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
