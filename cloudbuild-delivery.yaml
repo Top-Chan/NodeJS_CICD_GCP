@@ -1,6 +1,5 @@
 steps:
-# This step deploys the new version of our container image
-# in the hello-cloudbuild Kubernetes Engine cluster.
+# 将新版本的清单应用于 Kubernetes 集群
 # change the name and region of the GKE cluster
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Deploy
@@ -12,9 +11,7 @@ steps:
   - 'CLOUDSDK_COMPUTE_REGION=us-central1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-nodejs'
 
-# This step copies the applied manifest to the production branch
-# The COMMIT_SHA variable is automatically
-# replaced by Cloud Build.
+# 如果成功，则将清单复制到“生产”(production) 分支。
 - name: 'gcr.io/cloud-builders/git'
   id: Copy to production branch
   entrypoint: /bin/sh
