@@ -1,4 +1,12 @@
 steps:
+# 单元测试
+- name: node
+  entrypoint: npm
+  args: ['install']
+
+- name: node
+  entrypoint: npm
+  args: ['test']
 # 构建容器镜像
 - name: 'gcr.io/cloud-builders/docker'
   id: Build
